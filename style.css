@@ -1,0 +1,193 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0; /* Warna latar belakang abu-abu */
+}
+
+header {
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparan */
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.logo {
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("gambar/air-terjun.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+section {
+  padding: 30px 20px; /* Mengurangi jarak antar bagian */
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* Gambar di kanan, deskripsi di kiri */
+  animation: fadeIn 2s;
+}
+
+.about-content img {
+  max-width: 50%;
+  height: auto;
+  margin-left: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.menu-items,
+.catering-packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.menu-item,
+.catering-package {
+  flex: 1 1 calc(25% - 40px);
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.menu-item img,
+.catering-package img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.order-button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-container .contact-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.contact-container .map {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.contact-container .map iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-content img {
+    margin: 20px 0;
+  }
+
+  .menu-item,
+  .catering-package {
+    flex: 1 1 calc(50% - 40px);
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-container .contact-info,
+  .contact-container .map {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item,
+  .catering-package {
+    flex: 1 1 100%;
+  }
+}
